@@ -1,0 +1,286 @@
+[[services]]
+sname="PolarisService"
+path="/PolarisService"
+type="text/xml"
+
+	[[services.operations]]
+		opname="MultipleOutputs"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue="Standard"
+			response="""<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ 						<soapenv:Header>
+  							<typ:responseHeader xmlns:typ="http://xml.comcast.com/types">
+   								<typ:timestamp>${timestamp}</typ:timestamp>
+   								<typ:trackingId>101</typ:trackingId>
+  							</typ:responseHeader>
+ 						</soapenv:Header>
+ 						<soapenv:Body>
+ 							<randomNo>${rand}</randomNo>
+							<time>${timestamp}</time>
+							<tomorrow>${tomorrowTime}</tomorrow>
+							<guid>${guid}</guid>
+							<capturedFromInput>${tagvalue}</capturedFromInput>
+							<shuffled>${shuffle}</shuffled>
+							<insert>${tagvalue1}</insert>
+							<fetch>${tagvalue2}</fetch>
+  							<m:assignItemResponse xmlns:m="http://xml.comcast.com/inventory/services"/>
+ 						</soapenv:Body>
+					</soapenv:Envelope>"""
+									
+			[services.operations.outputs.variables]
+				rand ="getRandomNumber(100,999)"
+				timestamp ="getFormattedTimeStamp(2006-01-02-15:04:05-00)"
+				shuffle ="shuffle(ABCDE)"
+				tomorrowTime="getFormattedTimeStampWithOffset(2006-01-02-15:04:05-00,24,h)"
+				guid=" getGUID()"
+				tagvalue ="Envelope.Body.MultipleOutputs.surveyRequest.opportunityDetails.opportunityId"
+				tagvalue1="DBInsertValue(Envelope.Header.requestHeader.trackingId,test,CafeDB)"
+				tagvalue2="DBFetch(ticketid,test,CafeDB)when(Envelope.Header.requestHeader.trackingId)matches(customerid)"
+
+
+[[services]]
+sname="InventoryService"
+path="/InventoryService"
+type="text/xml"
+
+	[[services.operations]]
+		opname="validateItem"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue="validateItem"
+			response="""<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header><SOAP-ENV:Header><typ:responseHeader xmlns:typ="http://xml.comcast.com/types"><typ:timestamp>2012-01-19T21:43:28-05:00</typ:timestamp><typ:trackingId>101</typ:trackingId>
+				</typ:responseHeader> </SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body><validateItemResponse xmlns="http://xml.comcast.com/inventory/services"><validateItemReturn><ns1:validatedForCustomer xmlns:ns1="http://xml.comcast.com/inventory/types"/><typ:items xmlns:typ="http://xml.comcast.com/inventory/types">${dynamicString}</typ:items>  </validateItemReturn></validateItemResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>"""
+									
+				[services.operations.outputs.variables]
+				dynamicString="Repeat(<typ:item xsi:type=\"typ:TelephoneNumberItem\"><typ:location xsi:nil=\"true\"/><typ:reservedForCustomer xsi:nil=\"true\"/><typ:type xsi:nil=\"true\"/><typ:assignedToCustomer xsi:nil=\"true\"/><typ:market xsi:nil=\"true\"/><typ:configuration xsi:nil=\"true\"/><typ:id><typ:id>NDQwMjA0MTk0MQ==</typ:id></typ:id><typ:errorCode xsi:nil=\"true\"/><typ:errorMessage xsi:nil=\"true\"/><typ:requestId xsi:nil=\"true\"/><typ:lineType xsi:nil=\"true\"/><typ:disconnectReason xsi:nil=\"true\"/><typ:clliCode xsi:nil=\"true\"/><typ:nativeFlag>true</typ:nativeFlag><typ:telephoneNumber>@@Envelope.Body.validateItem.request.itemsToValidate.item.telephoneNumber@@</typ:telephoneNumber><typ:portEligible>true</typ:portEligible><typ:transferEligible xsi:nil=\"true\"/><typ:dispositionHistory xsi:nil=\"true\"/><typ:portStatus xsi:nil=\"true\"/><typ:originalCarrier xsi:nil=\"true\"/></typ:item>)wrtTag(Envelope.Body.validateItem.request.itemsToValidate.item)"
+				
+				
+				
+[[services]]
+sname="JSONservice"
+path="/JSONservice"
+type="text/json"
+
+	[[services.operations]]
+		opname="jsonopname"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue=""
+			response="""{
+        "Name": "Write presentation",
+        "Completed": false,
+        "Due": "0001-01-01T00:00:00Z"
+    }"""
+									
+			[services.operations.outputs.variables]
+				
+[[services]]
+sname="NGTUser"
+path="/addUserRequest"
+type="text/xml"
+
+	[[services.operations]]
+		opname="addUserRequest"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue="addUserRequest"
+			response="""<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <env:Header>
+  <typ:responseHeader
+    xmlns:typ="http://xml.comcast.com/types">
+   <timestamp
+    xmlns="">2016-09-07T02:10:07.704-04:00</timestamp>
+   <trackingId
+   xmlns="">d0ff2ec4-228f-4897-84e6-f685a7b6ac6c</trackingId>
+  </typ:responseHeader>
+ </env:Header>
+ <env:Body>
+  <ns1:userOperationResponse
+    xmlns:ns1="http://v2.ws.provision.ngt.com">
+   <transaction xmlns=""
+    xmlns:ns2="http://v2.ws.provision.ngt.com/ServiceTypes"
+     xsi:type="ns2:Transaction">
+    <externalTransactionId
+     xsi:type="xsd:string">BVE-STG-1492004250816-27220</externalTransactionId>
+    <transactionNumber
+    xsi:type="xsd:string">103350</transactionNumber>
+   </transaction>
+   <userStatuses
+    soapenc:arrayType="ns3:UserStatus[6]" xmlns=""
+    xmlns:ns3="http://v2.ws.provision.ngt.com/ServiceTypes"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xsi:type="soapenc:Array">
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">amikey137834407</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">rlance137834404</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">adona137834405</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">asplin137834406</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">rpod137834408</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">aaprey137834403</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${PhoneNumber}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">aralpha137834401</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">${tagvalue}</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true"
+     xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+    <userStatus
+      xsi:type="ns3:UserStatus">
+     <userId
+      xsi:type="xsd:string">rlea137834402</userId>
+     <phoneNumber
+      xsi:type="xsd:integer">2461193246</phoneNumber>
+     <status
+       xsi:type="ns3:Status">
+      <resultCode
+       xsi:type="xsd:string">00000</resultCode>
+      <context
+       xmlns:ns4="http://v2.ws.provision.ngt.com/BaseTypes"
+       xsi:type="ns4:ContextEnum">COMPLETED</context>
+      <errorMessage
+       xsi:nil="true" xsi:type="xsd:string"/>
+      <notifications
+       xsi:nil="true" xsi:type="xsd:string"/>
+     </status>
+    </userStatus>
+   </userStatuses>
+  </ns1:userOperationResponse>
+ </env:Body>
+</env:Envelope>"""	
+
+								
+			[services.operations.outputs.variables]
+			PhoneNumber="getRandomNumber(8560000000,8569999999)"
+			tagvalue="Envelope.Body.addUserRequest.users.user[8].phoneNumber"

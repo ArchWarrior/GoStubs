@@ -1,0 +1,596 @@
+
+[[services]]
+	sname="CWB_Get_IPControl"
+	path="/CWB_Get_IPControl"
+	type="text/xml"
+	[[services.operations]]
+		Opname="getContainerByName"
+		delay=0
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:sessionID xmlns:ns1="http://xml.apache.org/axis/session" soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" href="#id0" />
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:getContainerByNameResponse xmlns:ns2="http://diamondip.com/ipcontrol/ws/" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <getContainerByNameReturn href="#id1" />
+      </ns2:getContainerByNameResponse>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:long">2295026324792532005</multiRef>
+      <multiRef xmlns:ns3="http://service.netcontrol.diamondip.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id1" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns3:WSContainer">
+         <allowedAllocFromParentBlocktypes xsi:type="soapenc:string" xsi:nil="true" />
+         <allowedBlockTypes soapenc:arrayType="soapenc:string[45]" xsi:type="soapenc:Array">
+            <item xsi:type="soapenc:string">Any</item>
+            <item xsi:type="soapenc:string">Back End Firewall</item>
+            <item xsi:type="soapenc:string">CBC</item>
+            <item xsi:type="soapenc:string">CCS</item>
+            <item xsi:type="soapenc:string">CCS Loopback</item>
+            <item xsi:type="soapenc:string">CM</item>
+            <item xsi:type="soapenc:string">CPE</item>
+            <item xsi:type="soapenc:string">Customer Edge</item>
+            <item xsi:type="soapenc:string">Enterprise</item>
+            <item xsi:type="soapenc:string">External Services</item>
+            <item xsi:type="soapenc:string">Hub P2P</item>
+            <item xsi:type="soapenc:string">Infrastructure Delivery</item>
+            <item xsi:type="soapenc:string">Infrastructure Services</item>
+            <item xsi:type="soapenc:string">Internal Services</item>
+            <item xsi:type="soapenc:string">IWAP</item>
+            <item xsi:type="soapenc:string">LoopBack</item>
+            <item xsi:type="soapenc:string">MISP</item>
+            <item xsi:type="soapenc:string">MTA</item>
+            <item xsi:type="soapenc:string">Multicast- ASM ADS</item>
+            <item xsi:type="soapenc:string">Multicast- ASM DSG</item>
+            <item xsi:type="soapenc:string">Multicast- ASM PEG</item>
+            <item xsi:type="soapenc:string">Multicast- ASM Post Splice</item>
+            <item xsi:type="soapenc:string">Multicast- ASM UET</item>
+            <item xsi:type="soapenc:string">Multicast- SSM ADS</item>
+            <item xsi:type="soapenc:string">Multicast- SSM CAS</item>
+            <item xsi:type="soapenc:string">Multicast- SSM DSG</item>
+            <item xsi:type="soapenc:string">Multicast- SSM PEG</item>
+            <item xsi:type="soapenc:string">Multicast- SSM Post Splice</item>
+            <item xsi:type="soapenc:string">Multicast- SSM SDV</item>
+            <item xsi:type="soapenc:string">Multicast- SSM UET</item>
+            <item xsi:type="soapenc:string">Multicast- SSM-ENG</item>
+            <item xsi:type="soapenc:string">Multicast- SSM-IT</item>
+            <item xsi:type="soapenc:string">Non-DOCSIS Set Top</item>
+            <item xsi:type="soapenc:string">P2P</item>
+            <item xsi:type="soapenc:string">RAN P2P</item>
+            <item xsi:type="soapenc:string">Regional Public</item>
+            <item xsi:type="soapenc:string">Residential Prefix Delegation</item>
+            <item xsi:type="soapenc:string">UEN</item>
+            <item xsi:type="soapenc:string">UET Infrastructure</item>
+            <item xsi:type="soapenc:string">V6 HUB P2P</item>
+            <item xsi:type="soapenc:string">V6 Loopback</item>
+            <item xsi:type="soapenc:string">V6 RAN P2P</item>
+            <item xsi:type="soapenc:string">V6 VOD QAM</item>
+            <item xsi:type="soapenc:string">V6 VOD Servers</item>
+            <item xsi:type="soapenc:string">VOD Infrastructure</item>
+         </allowedBlockTypes>
+         <allowedDeviceTypes soapenc:arrayType="soapenc:string[26]" xsi:type="soapenc:Array">
+            <item xsi:type="soapenc:string">2Way Conduit</item>
+            <item xsi:type="soapenc:string">Access Panel</item>
+            <item xsi:type="soapenc:string">Access Point</item>
+            <item xsi:type="soapenc:string">Badge Reader</item>
+            <item xsi:type="soapenc:string">CE</item>
+            <item xsi:type="soapenc:string">CMTS</item>
+            <item xsi:type="soapenc:string">Commercial CPE</item>
+            <item xsi:type="soapenc:string">DVR</item>
+            <item xsi:type="soapenc:string">Firewall</item>
+            <item xsi:type="soapenc:string">IP Camera</item>
+            <item xsi:type="soapenc:string">IP Phone</item>
+            <item xsi:type="soapenc:string">Load Balancer</item>
+            <item xsi:type="soapenc:string">PC</item>
+            <item xsi:type="soapenc:string">Printer</item>
+            <item xsi:type="soapenc:string">QAM</item>
+            <item xsi:type="soapenc:string">Router</item>
+            <item xsi:type="soapenc:string">Server</item>
+            <item xsi:type="soapenc:string">Switch</item>
+            <item xsi:type="soapenc:string">Terminal Server</item>
+            <item xsi:type="soapenc:string">Unknown</item>
+            <item xsi:type="soapenc:string">Unspecified</item>
+            <item xsi:type="soapenc:string">Video Controller</item>
+            <item xsi:type="soapenc:string">VOD QAM</item>
+            <item xsi:type="soapenc:string">VOIP-Voice Gateway</item>
+            <item xsi:type="soapenc:string">VPN</item>
+            <item xsi:type="soapenc:string">Workstation</item>
+         </allowedDeviceTypes>
+         <allowedRootBlockTypes xsi:type="soapenc:string" xsi:nil="true" />
+         <applyDHCPToMultiparentDevContainer href="#id2" />
+         <blockTypeInfoTemplates soapenc:arrayType="soapenc:string[45]" xsi:type="soapenc:Array">
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+         </blockTypeInfoTemplates>
+         <containerName xsi:type="soapenc:string">8220188908623507</containerName>
+         <containerType xsi:type="soapenc:string">Logical</containerType>
+         <description xsi:type="soapenc:string" xsi:nil="true" />
+         <deviceInfoTemplates soapenc:arrayType="soapenc:string[26]" xsi:type="soapenc:Array">
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+            <item xsi:type="soapenc:string" xsi:nil="true" />
+         </deviceInfoTemplates>
+         <id href="#id3" />
+         <ignoreBlocktypeInUse href="#id4" />
+         <informationTemplate xsi:type="soapenc:string" xsi:nil="true" />
+         <maintainHistoryRecs href="#id5" />
+         <parentName xsi:type="soapenc:string">/Registry/Comcast/Online/Atlanta</parentName>
+         <replaceDHCPServer xsi:type="soapenc:string" xsi:nil="true" />
+         <replaceDHCPServerV6 xsi:type="soapenc:string" xsi:nil="true" />
+         <requireSWIPNameBlockTypes xsi:type="soapenc:string" xsi:nil="true" />
+         <userDefinedFields xsi:type="soapenc:string" xsi:nil="true" />
+      </multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id2" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:boolean">false</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id5" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:boolean">${valuefromInput}</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id4" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:boolean">false</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id3" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:int">1328528</multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>"""
+
+			[services.operations.outputs.variables]
+				valuefromInput="Envelope.Body.getContainerByName.containerName"
+
+[[services]]
+	sname="CWB_Deletes_IPControl"
+	path="/CWB_Deletes_IPControl"
+	type="text/xml"
+	[[services.operations]]
+		Opname="deleteBlock"
+		delay=0
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:sessionID xmlns:ns1="http://xml.apache.org/axis/session" href="#id0" soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" />
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:deleteBlockResponse xmlns:ns2="http://diamondip.com/ipcontrol/ws/" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:long">1000000000000636160</multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>"""
+			[services.operations.outputs.variables]
+
+	[[services.operations]]
+		Opname="deleteContainer"
+		delay=1
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:sessionID xmlns:ns1="http://xml.apache.org/axis/session" soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" href="#id0" />
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:deleteContainerResponse xmlns:ns2="http://diamondip.com/ipcontrol/ws/" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:long">5991765780309064891</multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>"""
+ 
+			[services.operations.outputs.variables]
+
+[[services]]
+	sname="Exports IPC"
+	path="/Exports IPC"
+	type="text/xml"
+	[[services.operations]]
+		Opname="initExportChildBlock"
+		delay=0
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:sessionID xmlns:ns1="http://xml.apache.org/axis/session" soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" href="#id0" />
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:initExportChildBlockResponse xmlns:ns2="http://diamondip.com/netcontrol/ws/" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <initExportChildBlockReturn href="#id1" />
+      </ns2:initExportChildBlockResponse>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:long">6766942350682090580</multiRef>
+      <multiRef xmlns:ns3="http://service.ipcontrol.diamondip.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id1" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns3:WSContext">
+         <contextId xsi:type="soapenc:string">ContextId_1344890931730</contextId>
+         <contextType xsi:type="soapenc:string">Export_Block</contextType>
+         <filter xsi:type="soapenc:string">${query}</filter>
+         <firstResultPos href="#id2" />
+         <internalResultCount href="#id3" />
+         <maxResults href="#id4" />
+         <options xsi:type="soapenc:string" xsi:nil="true" />
+         <query xsi:type="soapenc:string">select b from Container c join c.blocks b where b.rootblock=0 and c.id=679611 and ( exists ( select 1 from Adminacl as acl join acl.role as role join role.administrators as admin where acl.objectType=&amp;#39;Block&amp;#39; and acl.objectId=b.id and acl.flags like ? and admin.id=? ) or ( exists ( select 1 from Adminacl as acl join acl.role as role join role.administrators as admin where acl.objectType=&amp;#39;Container&amp;#39; and acl.objectId IN elements(b.containers) and acl.flags like ? and admin.id=? and not exists ( select 1 from Adminacl as bacl where bacl.objectType=&amp;#39;Block&amp;#39; and bacl.objectId=b.id and bacl.role = role ) ) or ( exists ( select 1 from Adminacl as acl join acl.role as role join role.administrators as admin, Container c join c.blocks cb where acl.objectType=&amp;#39;Container&amp;#39; and acl.flags like ? and admin.id=? and cb = b and exists ( select 1 from ContainerClosure cc where cc.ancestor.id = acl.objectId and cc.descendant = c and distance = ( select min(cc.distance) from ContainerClosure cc, Adminacl acl3 where acl3.objectType=&amp;#39;Container&amp;#39; and acl3.objectId = cc.ancestor.id and cc.descendant = c and acl3.flags like &amp;#39;___1%&amp;#39; and acl3.role = acl.role ) ) and ( not exists ( select 1 from Adminacl as cacl where cacl.objectType=&amp;#39;Container&amp;#39; and cacl.objectId = c and cacl.role = acl.role ) and not exists ( select 1 from Adminacl as bacl where bacl.objectType=&amp;#39;Block&amp;#39; and bacl.objectId=b.id and bacl.role = acl.role ) ) ) ) ) )</query>
+         <resultCount href="#id5" />
+      </multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id5" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int">0</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id3" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int">0</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id4" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int">100</multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id2" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int">0</multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>"""
+			[services.operations.outputs.variables]
+				query="Envelope.Body.initExportChildBlock.query"
+	[[services.operations]]
+		Opname="exportChildBlock"
+		delay=0
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:sessionID xmlns:ns1="http://xml.apache.org/axis/session" soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" href="#id0" />
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:exportChildBlockResponse xmlns:ns2="http://diamondip.com/netcontrol/ws/" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <exportChildBlockReturn xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" soapenc:arrayType="xsd:anyType[1]" xsi:type="soapenc:Array">
+            <item href="#id1" />
+         </exportChildBlockReturn>
+      </ns2:exportChildBlockResponse>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:long">${sessionID}</multiRef>
+      <multiRef xmlns:ns3="http://service.netcontrol.diamondip.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id1" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns3:WSChildSubnetBlock">
+         <childBlock href="#id2" />
+         <subnetPolicy href="#id3" />
+      </multiRef>
+      <multiRef xmlns:ns4="http://service.netcontrol.diamondip.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id3" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns4:WSSubnetPolicy">
+         <DHCPOptionsSet xsi:type="soapenc:string" xsi:nil="true" />
+         <DHCPPolicySet xsi:type="soapenc:string" xsi:nil="true" />
+         <DNSServers xsi:type="soapenc:string" xsi:nil="true" />
+         <defaultGateway xsi:type="soapenc:string" xsi:nil="true" />
+         <failoverDHCPServer xsi:type="soapenc:string" xsi:nil="true" />
+         <forwardDomainTypes xsi:type="soapenc:string" xsi:nil="true" />
+         <forwardDomains xsi:type="soapenc:string" xsi:nil="true" />
+         <primaryDHCPServer xsi:type="soapenc:string" xsi:nil="true" />
+         <primaryWINSServer xsi:type="soapenc:string" xsi:nil="true" />
+         <reverseDomainTypes xsi:type="soapenc:string" xsi:nil="true" />
+         <reverseDomains xsi:type="soapenc:string" xsi:nil="true" />
+      </multiRef>
+      <multiRef xmlns:ns5="http://service.netcontrol.diamondip.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id2" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns5:WSChildBlock">
+         <SWIPname xsi:type="soapenc:string" xsi:nil="true" />
+         <allocationReason xsi:type="soapenc:string" xsi:nil="true" />
+         <allocationReasonDescription xsi:type="soapenc:string" xsi:nil="true" />
+         <allocationStrategy xsi:type="soapenc:string" xsi:nil="true" />
+         <allocationTemplate xsi:type="soapenc:string" xsi:nil="true" />
+         <blockAddr xsi:type="soapenc:string">50.194.43.128</blockAddr>
+         <blockName xsi:type="soapenc:string">50.194.43.128/25</blockName>
+         <blockSize xsi:type="soapenc:string">25</blockSize>
+         <blockStatus xsi:type="soapenc:string">FullyAssigned</blockStatus>
+         <blockType xsi:type="soapenc:string">CBC</blockType>
+         <container xsi:type="soapenc:string">/Registry/Comcast/Online/Utah/2012081312153459</container>
+         <createReverseDomains xsi:type="soapenc:string">false</createReverseDomains>
+         <description xsi:type="soapenc:string" />
+         <domainType xsi:type="soapenc:string" xsi:nil="true" />
+         <excludeFromDiscovery xsi:type="soapenc:string">false</excludeFromDiscovery>
+         <interfaceAddress xsi:type="soapenc:string" xsi:nil="true" />
+         <interfaceName xsi:type="soapenc:string" xsi:nil="true" />
+         <ipv6 href="#id4" />
+         <userDefinedFields soapenc:arrayType="soapenc:string[0]" xsi:type="soapenc:Array" />
+      </multiRef>
+      <multiRef xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" id="id4" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:boolean">false</multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>"""
+			[services.operations.outputs.variables]
+				sessionID="Envelope.Header.sessionID"
+[[services]]
+	sname="InventoryService"
+	path="/InventoryService"
+	type="text/xml"
+	[[services.operations]]
+		opname="validateItem"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue="validateItem"
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Header>
+      <SOAP-ENV:Header>
+         <typ:responseHeader xmlns:typ="http://xml.comcast.com/types">
+            <typ:timestamp>2012-01-19T21:43:28-05:00</typ:timestamp>
+            <typ:trackingId>101</typ:trackingId>
+         </typ:responseHeader>
+      </SOAP-ENV:Header>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <validateItemResponse xmlns="http://xml.comcast.com/inventory/services">
+         <validateItemReturn>
+            <ns1:validatedForCustomer xmlns:ns1="http://xml.comcast.com/inventory/types" />
+            <typ:items xmlns:typ="http://xml.comcast.com/inventory/types">${dynamicString}</typ:items>
+         </validateItemReturn>
+      </validateItemResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>"""
+									
+			[services.operations.outputs.variables]
+				dynamicString="Repeat(<typ:item xsi:type=\"typ:TelephoneNumberItem\"><typ:location xsi:nil=\"true\"/><typ:reservedForCustomer xsi:nil=\"true\"/><typ:type xsi:nil=\"true\"/><typ:assignedToCustomer xsi:nil=\"true\"/><typ:market xsi:nil=\"true\"/><typ:configuration xsi:nil=\"true\"/><typ:id><typ:id>NDQwMjA0MTk0MQ==</typ:id></typ:id><typ:errorCode xsi:nil=\"true\"/><typ:errorMessage xsi:nil=\"true\"/><typ:requestId xsi:nil=\"true\"/><typ:lineType xsi:nil=\"true\"/><typ:disconnectReason xsi:nil=\"true\"/><typ:clliCode xsi:nil=\"true\"/><typ:nativeFlag>true</typ:nativeFlag><typ:telephoneNumber>@@Envelope.Body.validateItem.request.itemsToValidate.item.telephoneNumber@@</typ:telephoneNumber><typ:portEligible>true</typ:portEligible><typ:transferEligible xsi:nil=\"true\"/><typ:dispositionHistory xsi:nil=\"true\"/><typ:portStatus xsi:nil=\"true\"/><typ:originalCarrier xsi:nil=\"true\"/></typ:item>)wrtTag(Envelope.Body.validateItem.request.itemsToValidate)"
+
+[[services]]
+	sname="PolarisService"
+	path="/PolarisService"
+	type="text/xml"
+	[[services.operations]]
+		Opname="MultipleOutputs"
+		delay=0
+		monitoring=true
+			[[services.operations.outputs]]
+			tagvalue="Standard"
+			response="""<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ <soapenv:Header>
+ <typ:responseHeader xmlns:typ="http://xml.comcast.com/types">
+ <typ:timestamp>${timestamp}</typ:timestamp>
+ <typ:trackingId>101</typ:trackingId>
+ </typ:responseHeader>
+ </soapenv:Header>
+ <soapenv:Body>
+ <randomNo>${rand}</randomNo>
+ <time>${timestamp}</time>
+ <capturedFromInput>${tagvalue}</capturedFromInput>
+ <shuffled>${shuffle}</shuffled>
+ <m:assignItemResponse xmlns:m="http://xml.comcast.com/inventory/services"/>
+ </soapenv:Body>
+ </soapenv:Envelope>"""
+ 
+			[services.operations.outputs.variables]
+				shuffle="shuffle(ABCDE)"
+				tagvalue="Envelope.Body.MultipleOutputs.surveyRequest.correlationId"
+				rand="getRandomNumber(100,999)"
+				timestamp="getFormattedTimeStamp(2006-01-02-15:04:05-00)"
+				
+[[services]]
+	sname="VA_CSP_TN_Management"
+	path="/VA_CSP_TN_Management"
+	type="text/xml"
+	[[services.operations]]
+		opname="validateCRCP"
+		delay=1
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:queryStateRcByNpaNxxResponse xmlns:ns2="http://xml.comcast.com/tnmanagement/services" xmlns="http://xml.comcast.com/tnmanagement/types" xmlns:ns3="http://xml.comcast.com/types" xmlns:ns4="http://xml.comcast.com/common/types" xmlns:ns5="http://xml.comcast.com/commercial/types">
+         <ns2:queryStateRcByNpaNxxReturn>
+            <npanxxDetailResponses>
+               <nPANXXDetailResponse>
+                  <rateCenter>${RateCenter}</rateCenter>
+                  <npanxxDetail>
+                     <npa>${npa}</npa>
+                     <nxx>${nxx}</nxx>
+                     <L>${L}</L>
+                  </npanxxDetail>
+                  <state>${state}</state>
+                  <statusDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+                  <crcpStatus>CRCP_ELIGIBLE</crcpStatus>
+                  <tnProvider1>COMCAST</tnProvider1>
+                  <tnProvider2>LEVEL3</tnProvider2>
+               </nPANXXDetailResponse>
+            </npanxxDetailResponses>
+         </ns2:queryStateRcByNpaNxxReturn>
+      </ns2:queryStateRcByNpaNxxResponse>
+   </soap:Body>
+</soap:Envelope>"""
+			[services.operations.outputs.variables]
+				RateCenter="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.serviceLocationRateCenter"
+				npa="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.npa"
+				nxx="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.nxx"
+				L="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.L"
+				state="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.serviceLocationState"
+				
+	[[services.operations]]
+		opname="validateSubcriberProfile"
+		delay=1
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns3:validateSubcriberProfileResponse xmlns:ns3="http://xml.comcast.com/commercialresourcemanagement/services" xmlns="http://xml.comcast.com/commercial/types" xmlns:ns2="http://xml.comcast.com/commercialresourcemanagement/types" xmlns:ns4="http://xml.comcast.com/common/types" xmlns:ns5="http://xml.comcast.com/types">
+         <ns3:validateSubcriberProfileReturn>
+            <ns2:validateSubscriberProfileResponse>
+               <ns2:state>${state}</ns2:state>
+               <ns2:rateCenter>${rateCenter}</ns2:rateCenter>
+               <ns2:npaDetails>
+                  <ns2:nPADetail>
+                     <ns2:ncosId>V9WCHESTER_CHES</ns2:ncosId>
+                     <ns2:npa>484</ns2:npa>
+                  </ns2:nPADetail>
+               </ns2:npaDetails>
+            </ns2:validateSubscriberProfileResponse>
+         </ns3:validateSubcriberProfileReturn>
+      </ns3:validateSubcriberProfileResponse>
+   </soap:Body>
+</soap:Envelope>"""
+			[services.operations.outputs.variables]
+				state="Envelope.Body.validateSubcriberProfile.validateSubscriberProfileRequest.validateSubscriberProfiles.validateSubscriberProfile.state"	
+				rateCenter="Envelope.Body.validateSubcriberProfile.validateSubscriberProfileRequest.validateSubscriberProfiles.validateSubscriberProfile.rateCenter"								
+				
+				
+[[services]]
+	sname="QueryCustomer"
+	path="/QueryCustomer"
+	type="text/xml"
+	[[services.operations]]
+		opname="queryCustomer"
+		delay=0
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<soap:Envelope
+   xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body>
+  <ns3:queryCustomerResponse
+   xmlns="http://xml.comcast.com/commercialcustomer/types"
+   xmlns:ns2="http://xml.comcast.com/commercial/types"
+   xmlns:ns3="http://xml.comcast.com/commercialcustomer/services"
+   xmlns:ns4="http://xml.comcast.com/types"
+   xmlns:ns5="http://xml.comcast.com/common/types"
+       xmlns:ns6="http://xml.comcast.com/commercialtasknotification/types">
+   <ns3:queryCustomerReturn>
+    <customerReferences>
+     <commercialCustomerReference>
+      <ns5:alternateContacts
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true"/>
+      <ns5:personName
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true"/>
+      <ns5:orgName>
+       <ns5:businessName>Colby Farm2</ns5:businessName>
+      </ns5:orgName>
+      <customerId>V0I6OTAzNTI1MTQ2</customerId>
+      <classification>
+       <customerClassification>SMB</customerClassification>
+      </classification>
+      <rootBillingArrangementId>${billingArrangementId}</rootBillingArrangementId>
+      <multiSiteIndicator>false</multiSiteIndicator>
+      <siteReference>
+       <localBillerId>8000000000000002</localBillerId>
+       <savilleId>${savilleID}</savilleId>
+      </siteReference>
+      <customerCreateDate
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+      <status>ACTIVE</status>
+      <primaryAddress>
+       <ns5:locationID
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:careOfLine
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:poBoxNumber
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:streetAddress>PO BOX 101</ns5:streetAddress>
+       <ns5:unitNumber
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:unitType
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:zip4Code
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:zipCode>10001</ns5:zipCode>
+       <ns5:city>Spring</ns5:city>
+       <ns5:county
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:state>TX</ns5:state>
+       <ns5:country
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:province
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:latitude
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:longitude
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:nil="true"/>
+       <ns5:streetAddress2
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true">Suite 101</ns5:streetAddress2>
+      </primaryAddress>
+      <phone
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true"/>
+      <accountMigrationIndicator
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true"/>
+      <warning
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:nil="true"/>
+      <queryCustomerResponse
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:nil="true"/>
+     </commercialCustomerReference>
+    </customerReferences>
+    <paginationResponse>
+     <ns2:totalNumberOfRecords
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:nil="true"/>
+     <ns2:totalNumberOfPages
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+     <ns2:hasMoreRows>false</ns2:hasMoreRows>
+    </paginationResponse>
+    <status>SUCCESS</status>
+   </ns3:queryCustomerReturn>
+  </ns3:queryCustomerResponse>
+ </soap:Body>
+</soap:Envelope>"""
+			[services.operations.outputs.variables]
+				billingArrangementId="Envelope.Body.queryCustomer.queryCustomerRequest.billingArrangementId"
+				savilleID="DBFetch(savilleid,test,CafeDB)when(Envelope.Body.queryCustomer.queryCustomerRequest.billingArrangementId)matches(rootbillingarrangementid)"
+				
+				tag="DBInsertValue(Envelope.Body.queryCustomer.queryCustomerRequest.billingArrangementId,test,ForInsert)"
+				
+	

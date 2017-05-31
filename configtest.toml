@@ -1,0 +1,69 @@
+[[services]]
+	sname="VA_CSP_TN_Management"
+	path="/VA_CSP_TN_Management"
+	type="text/xml"
+	[[services.operations]]
+		opname="validateCRCP"
+		delay=1
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:queryStateRcByNpaNxxResponse xmlns:ns2="http://xml.comcast.com/tnmanagement/services" xmlns="http://xml.comcast.com/tnmanagement/types" xmlns:ns3="http://xml.comcast.com/types" xmlns:ns4="http://xml.comcast.com/common/types" xmlns:ns5="http://xml.comcast.com/commercial/types">
+         <ns2:queryStateRcByNpaNxxReturn>
+            <npanxxDetailResponses>
+               <nPANXXDetailResponse>
+                  <rateCenter>${RateCenter}</rateCenter>
+                  <npanxxDetail>
+                     <npa>${npa}</npa>
+                     <nxx>${nxx}</nxx>
+                     <L>${L}</L>
+                  </npanxxDetail>
+                  <state>${state}</state>
+                  <statusDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+                  <crcpStatus>CRCP_ELIGIBLE</crcpStatus>
+                  <tnProvider1>COMCAST</tnProvider1>
+                  <tnProvider2>LEVEL3</tnProvider2>
+               </nPANXXDetailResponse>
+            </npanxxDetailResponses>
+         </ns2:queryStateRcByNpaNxxReturn>
+      </ns2:queryStateRcByNpaNxxResponse>
+   </soap:Body>
+</soap:Envelope>"""
+			[services.operations.outputs.variables]
+				RateCenter="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.serviceLocationRateCenter"
+				npa="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.npa"
+				nxx="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.nxx"
+				L="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.npanxxDetails.nPANXXDetail.L"
+				state="Envelope.Body.queryStateRcByNpaNxx.queryStateRcbyNpaNxxRequest.serviceLocationState"
+				
+	[[services.operations]]
+		opname="validateSubcriberProfile"
+		delay=1
+		monitoring=true
+		[[services.operations.outputs]]
+			tagvalue=""
+			response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns3:validateSubcriberProfileResponse xmlns:ns3="http://xml.comcast.com/commercialresourcemanagement/services" xmlns="http://xml.comcast.com/commercial/types" xmlns:ns2="http://xml.comcast.com/commercialresourcemanagement/types" xmlns:ns4="http://xml.comcast.com/common/types" xmlns:ns5="http://xml.comcast.com/types">
+         <ns3:validateSubcriberProfileReturn>
+            <ns2:validateSubscriberProfileResponse>
+               <ns2:state>${state}</ns2:state>
+               <ns2:rateCenter>${rateCenter}</ns2:rateCenter>
+               <ns2:npaDetails>
+                  <ns2:nPADetail>
+                     <ns2:ncosId>V9WCHESTER_CHES</ns2:ncosId>
+                     <ns2:npa>484</ns2:npa>
+                  </ns2:nPADetail>
+               </ns2:npaDetails>
+            </ns2:validateSubscriberProfileResponse>
+         </ns3:validateSubcriberProfileReturn>
+      </ns3:validateSubcriberProfileResponse>
+   </soap:Body>
+</soap:Envelope>"""
+			[services.operations.outputs.variables]
+				state="Envelope.Body.validateSubcriberProfile.validateSubscriberProfileRequest.validateSubscriberProfiles.validateSubscriberProfile.state"	
+				rateCenter="Envelope.Body.validateSubcriberProfile.validateSubscriberProfileRequest.validateSubscriberProfiles.validateSubscriberProfile.rateCenter"				

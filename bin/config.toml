@@ -1,0 +1,8 @@
+"port"="8089"
+[[services]]
+sname="cafeservice"
+path="/cafeservice"			
+	[[services.operations]]
+		opname="cafeservice2"
+		delay=1
+		output="<sample>hello from cafeservice</sample><sample2>##(DB(columnname)match(Envelope.Body.queryCustomer.queryCustomerRequest.billingArrangementId))##</sample2>"

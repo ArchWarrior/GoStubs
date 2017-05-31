@@ -1,0 +1,70 @@
+
+[[services]]
+sname="InventoryService"
+path="/InventoryService"
+[[services.operations]]
+opname="getItem"
+delay=0
+[[services.operations.outputs]]
+tagvalue=""
+response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:getItemResponse xmlns:ns2="http://xml.comcast.com/survey/services" xmlns="http://xml.comcast.com/survey/types" xmlns:ns3="http://xml.comcast.com/common/types" xmlns:ns4="http://xml.comcast.com/commercial/types" xmlns:ns5="http://xml.comcast.com/commercialcustomer/types" xmlns:ns6="http://xml.comcast.com/types" xmlns:ns7="http://xml.comcast.com/commercialtasknotification/types" xmlns:ns8="http://xml.comcast.com/commercialaccountmanagement/types">
+            <ns2:createSurveyReturn>
+                <surveyReference>
+                    <surveyReference>
+                        <inquiryRequestId>antony</inquiryRequestId>
+                        <correlationId>999</correlationId>
+                        <omName>##trackingId##</omName>
+                        <status>COMPLETED</status>
+                    </surveyReference>
+                </surveyReference>
+            </ns2:createSurveyReturn>
+        </ns2:getItemResponse >
+    </soap:Body>
+</soap:Envelope>"""
+
+[[services]]
+sname="sample"
+path="/sample"
+	[[services.operations]]
+		opname="AddBVEUids"
+		delay=0
+		[[services.operations.outputs]]
+		response="""<sample>hello from createSurvey standard</sample>
+		<s>##300+300##</s>
+		<s>##Envelope.Body.AddBVEUids.addBVEUidInfo.bveUIDInfo.bveUid.string##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(randomNum(100,999))##</s>
+		<ip>##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##</ip>
+		<s>##(randomNum(100,999))##</s>"""
+		
+		
+
+[[services]]
+sname="ForJSON"
+path="/ForJSON"
+[[services.operations]]
+opname=""
+delay=0
+[[services.operations.outputs]]
+tagvalue=""
+response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:getItemResponse xmlns:ns2="http://xml.comcast.com/survey/services" xmlns="http://xml.comcast.com/survey/types" xmlns:ns3="http://xml.comcast.com/common/types" xmlns:ns4="http://xml.comcast.com/commercial/types" xmlns:ns5="http://xml.comcast.com/commercialcustomer/types" xmlns:ns6="http://xml.comcast.com/types" xmlns:ns7="http://xml.comcast.com/commercialtasknotification/types" xmlns:ns8="http://xml.comcast.com/commercialaccountmanagement/types">
+            <ns2:createSurveyReturn>
+                <surveyReference>
+                    <surveyReference>
+                        <inquiryRequestId>antony</inquiryRequestId>
+                        <correlationId>999</correlationId>
+                        <omName>##trackingId##</omName>
+                        <status>COMPLETED</status>
+                    </surveyReference>
+                </surveyReference>
+            </ns2:createSurveyReturn>
+        </ns2:getItemResponse >
+    </soap:Body>
+</soap:Envelope>"""
